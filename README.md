@@ -1,3 +1,9 @@
 # Pysearch
-This is a python code for searching particular file in mycomputer.
-just give a colon you want to search and file type to list all file with path.
+A python module to recursively list files of a specified extension in a given directory.
+
+### Usage Sample:
+```=
+python pysearch.py -d /tmp/ -f .txt
+
+python pysearch.py -d . -f .py
+```
