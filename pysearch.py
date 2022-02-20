@@ -15,11 +15,14 @@ def pysearch(dir_path: str, file_type: str) -> list:
     :return: List of files found with the provided file extension and dir path
     :rtype: list
     """
-    files_list = list()
+    files_list = []
     for root, dirs, files in os.walk(dir_path):
-        for file in files:
-            if file.endswith(file_type):
-                files_list.append(os.path.join(root, file))
+        files_list.extend(
+            os.path.join(root, file)
+            for file in files
+            if file.endswith(file_type)
+        )
+
     return files_list
 
 
